@@ -1,0 +1,12 @@
+{
+  "name": "RN_Template",
+  "version": "0.0.1",
+  "description": "React Native Template",
+  "repository": "git@github.com:Esemesek/react-native-new-template.git",
+  "author": "Muhammad Ali Hashmi <im.alihashmi14@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "prompts": "^2.4.2"
+  }
+}
