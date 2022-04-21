@@ -11,6 +11,7 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		25A0BE8028101B180068A420 /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25A0BE7F28101B180068A420 /* BootSplash.storyboard */; };
 		618DED400F946583B2F131D6 /* libPods-ProjectName.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 55E084A26A9885AE6551688B /* libPods-ProjectName.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		9AC1DDC8D8D43E31B810821C /* libPods-ProjectName-ProjectNameTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CD4CE02D872DBA8AB84912A /* libPods-ProjectName-ProjectNameTests.a */; };
@@ -36,6 +37,7 @@
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = ProjectName/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ProjectName/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ProjectName/main.m; sourceTree = "<group>"; };
+		25A0BE7F28101B180068A420 /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = ProjectName/BootSplash.storyboard; sourceTree = "<group>"; };
 		48882223A4B18A9CAA5669B3 /* Pods-ProjectName-ProjectNameTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName-ProjectNameTests.release.xcconfig"; path = "Target Support Files/Pods-ProjectName-ProjectNameTests/Pods-ProjectName-ProjectNameTests.release.xcconfig"; sourceTree = "<group>"; };
 		55E084A26A9885AE6551688B /* libPods-ProjectName.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ProjectName.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5A0AD68CD57C4547CF5128A5 /* Pods-ProjectName.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ProjectName.release.xcconfig"; path = "Target Support Files/Pods-ProjectName/Pods-ProjectName.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,10 +89,11 @@
 			isa = PBXGroup;
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
+				25A0BE7F28101B180068A420 /* BootSplash.storyboard */,
+				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
 			name = ProjectName;
@@ -145,7 +148,6 @@
 				F7668BCCCF45B114823C4BAC /* Pods-ProjectName-ProjectNameTests.debug.xcconfig */,
 				48882223A4B18A9CAA5669B3 /* Pods-ProjectName-ProjectNameTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -243,6 +245,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25A0BE8028101B180068A420 /* BootSplash.storyboard in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
