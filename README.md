@@ -5,6 +5,10 @@
 ## Installation
 
 ```sh
+npx react-native init AwesomeTSProject --template https://github.com/falconitconsultant/RN-Template.git
+```
+
+```sh
 yarn or yarn install 
 ```
 
@@ -14,6 +18,7 @@ IOS:
 yarn pod 
 ```
 or
+
 ```sh
 cd ios && pod install
 yarn ios
