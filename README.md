@@ -34,8 +34,10 @@ yarn android
 In order to speed up the setup, we provide a **CLI** to generate assets, create the Android Drawable XML file and the iOS Storyboard file automatically ✨.
 
 ```bash
-$ npx react-native generate-bootsplash --help
-# --- or ---
+npx react-native generate-bootsplash --help
+```
+--- or ---
+```bash
 $ yarn react-native generate-bootsplash --help
 ```
 
