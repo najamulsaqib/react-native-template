@@ -38,7 +38,7 @@ npx react-native generate-bootsplash --help
 ```
 --- or ---
 ```bash
-$ yarn react-native generate-bootsplash --help
+yarn react-native generate-bootsplash --help
 ```
 
 The command can take multiple arguments:
