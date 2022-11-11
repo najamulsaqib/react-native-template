@@ -1,6 +1,4 @@
-import {heightRef, widthRef} from './screenSize';
-
-const {StyleSheet} = require('react-native');
+import { heightRef, widthRef } from './screenSize';
 export const MEDIA_HEIGHT = 295 * heightRef;
 const globalStyles = {
   Theme: {

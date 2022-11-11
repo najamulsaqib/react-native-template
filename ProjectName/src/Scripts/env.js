@@ -2,9 +2,9 @@
 // export {env} from './debug';
 const fs = require('fs');
 const path = require('path');
-const {argv} = require('yargs');
+const { argv } = require('yargs');
 
-const {env} = argv;
+const { env } = argv;
 
 // Accepted environment params, they are directly related to the name of the folders created before.
 const acceptedEnvs = ['debug', 'staging', 'release'];
