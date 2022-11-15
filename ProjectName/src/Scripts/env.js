@@ -16,23 +16,25 @@ function writeFile(file, string) {
     return true;
   }
 
-  console.log(`File "${file}" not found.`);
+  console.log(`🚀 ~ File "${file}" not found.`);
   process.exit(1);
 }
 
 // Function that validate if the param passed to the script is a valid environment.
 function validateParams() {
-  console.log(`Validating params...`);
+  console.log('🚀 ~ Validating params...');
   if (!env) {
     console.log(
-      `Error.  Please inform a valid environment: ${acceptedEnvs.join(', ')}.`,
+      `🚀 ~ Error.  Please inform a valid environment: ${acceptedEnvs.join(
+        ', ',
+      )}.`,
     );
     process.exit(1);
   }
 
   if (!acceptedEnvs.includes(env)) {
     console.log(
-      `Error. Wrong environment, choose one of those: ${acceptedEnvs.join(
+      `🚀 ~ Error. Wrong environment, choose one of those: ${acceptedEnvs.join(
         ', ',
       )}.`,
     );
@@ -42,10 +44,10 @@ function validateParams() {
 
 // Function that replaces the file content with the right content.
 function setEnvironment() {
-  console.log(`Setting environmet to ${env}...`);
+  console.log('🚀 ~ Setting environment to', env);
 
   // String that will override the current export string
-  const importerString = `export { env } from './${env}'\n`;
+  const importerString = `export { env } from './${env}';\n`;
 
   // Env index file location that will be overridden
   const envIndexFileLocation = path.resolve(
@@ -53,12 +55,12 @@ function setEnvironment() {
     '..',
     'config',
     'env',
-    'index.js',
+    'index.ts',
   );
 
   // Writes right content inside the environment file
   writeFile(envIndexFileLocation, importerString);
-  console.log(`Environment successfully setted to ${env}.`);
+  console.log('🚀 ~ Environment changed to ', env);
   process.exit(0);
 }
 

@@ -38,6 +38,7 @@
     "react": "17.0.2",
     "react-native": "0.66.1",
     "react-native-bootsplash": "^4.1.4",
+    "react-native-dropdown-picker": "^5.4.3",
     "react-native-dynamic-vector-icons": "^1.2.0",
     "react-native-event-listeners": "^1.0.7",
     "react-native-gesture-handler": "^2.7.0",
