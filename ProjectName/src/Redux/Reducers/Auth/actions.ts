@@ -9,7 +9,7 @@ export const LOGIN = () => {
   dispatch({
     type: USER_LOGIN,
   });
-  showSnackbar({ data: 'LOGIN Snackbar' });
+  showSnackbar({ type: 'success', body: 'Login Successful', header: 'Login' });
 };
 
 export const LOGOUT = () => {
@@ -17,5 +17,5 @@ export const LOGOUT = () => {
   dispatch({
     type: USER_LOGOUT,
   });
-  showSnackbar({ data: 'LOGOUT Snackbar', success: false });
+  showSnackbar({ type: 'error', body: 'Logout Successful', header: 'Logout' });
 };

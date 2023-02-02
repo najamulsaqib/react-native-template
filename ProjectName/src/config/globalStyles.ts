@@ -40,3 +40,7 @@ const globalStyles = {
   },
 };
 export default globalStyles;
+
+type HexColor = string & { _?: any };
+
+export type TColors = keyof typeof globalStyles.Theme | HexColor;

@@ -12,7 +12,7 @@ const Image = ({
   color,
   border,
   borderWidth,
-  bgColor = globalStyles.Theme.PrimaryColor,
+  bgColor = 'PrimaryColor',
   resizeMode = 'contain',
   borderRadius,
   ...rest
@@ -30,13 +30,20 @@ const Image = ({
         {
           borderWidth:
             border !== undefined ? (borderWidth ? borderWidth : 2) : undefined,
-          borderColor: bgColor !== undefined ? bgColor : undefined,
+          borderColor:
+            bgColor !== undefined
+              ? //@ts-ignore
+                globalStyles.Theme[bgColor] ?? bgColor
+              : undefined,
           borderRadius: borderRadius && borderRadius,
           height: imageHeight,
           width: imageWidth,
           resizeMode,
         },
-        color !== undefined ? { tintColor: color } : {},
+        color !== undefined
+          ? //@ts-ignore
+            { tintColor: globalStyles.Theme[color] ?? color }
+          : {},
         style,
       ]}
       {...{ ...rest }}

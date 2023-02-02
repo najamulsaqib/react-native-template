@@ -1,79 +1,58 @@
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, TextStyle, ViewStyle } from 'react-native';
+import React, { useEffect, useRef } from 'react';
+import DropdownAlert, {
+  CloseActionType,
+  DropdownAlertType,
+} from 'react-native-dropdownalert';
 import { EventRegister } from 'react-native-event-listeners';
-import RNSnackbar from 'rn-animated-snackbar';
-import globalStyles from 'src/config/globalStyles';
-import { heightRef } from 'src/config/screenSize';
 
 const Snackbar = () => {
-  const [state, setState] = useState({
-    visible: false,
-    config: {},
-    textStyle: {},
-    data: '',
-  });
+  let dropDownAlertRef = useRef();
 
+  // @ts-ignore
   useEffect(() => {
     let listener = EventRegister.addEventListener(
       'showSnackbar',
-      ({ data = '', config = {}, success = true, textStyle = {} }) => {
-        if (config.top === undefined) {
-          config.bottom = 30;
-        }
-        setState(s => ({
-          ...s,
-          visible: true,
-          data: JSON.stringify(data).split('"').join(''),
-          config: {
-            backgroundColor: success
-              ? globalStyles.Theme.PrimaryColor
-              : globalStyles.Theme.SecondaryColor,
-            ...config,
-          },
-          textStyle: { ...textStyle },
-        }));
+      ({ type, header, body, action, interval }) => {
+        // @ts-ignore
+        dropDownAlertRef.alertWithType(type, header, body, action, interval);
       },
     );
     return () => listener;
   }, []);
   return (
-    <RNSnackbar
-      visible={state.visible}
-      onDismiss={() => setState(s => ({ ...s, visible: false }))}
-      text={state.data}
-      textStyle={state.textStyle}
-      duration={RNSnackbar.LENGTH_SHORT}
-      containerStyle={[styles.snackbarContainer, state.config]}
+    <DropdownAlert
+      ref={ref => {
+        if (ref) {
+          //@ts-ignore
+          dropDownAlertRef = ref;
+        }
+      }}
+      inactiveStatusBarBackgroundColor="transparent"
+      inactiveStatusBarStyle="dark-content"
+      translucent
     />
   );
 };
 
 export default Snackbar;
 
-const styles = StyleSheet.create({
-  snackbarContainer: {
-    position: 'absolute',
-    left: 0,
-    right: 0,
-    borderRadius: heightRef * 15,
-    zIndex: 1000,
-    borderColor: 'white',
-    borderWidth: heightRef,
-  },
-});
-
 type TSnackBar = {
-  data: string;
-  config?: ViewStyle;
-  textStyle?: TextStyle;
+  type: DropdownAlertType;
+  header: string;
+  body: string;
   success?: boolean;
+  action?: CloseActionType;
+  interval?: number; // duration in milliseconds
 };
 
 export const showSnackbar = ({
-  data = '',
-  config = {},
-  textStyle = {},
-  success = true,
+  type = 'info',
+  header,
+  body,
+  action = 'automatic',
+  interval = 1000,
 }: TSnackBar) => {
-  EventRegister.emit('showSnackbar', { data, config, success, textStyle });
+  EventRegister.emit('showSnackbar', { type, header, body, action, interval });
 };
+
+// DOCS-https://github.com/testshallpass/react-native-dropdownalert/blob/master/docs/PROPS.md

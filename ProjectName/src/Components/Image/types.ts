@@ -1,4 +1,5 @@
 import { ImageProps } from 'react-native';
+import { TColors } from 'src/config/globalStyles';
 
 export interface IImage extends ImageProps {
   size?: number;
@@ -6,7 +7,7 @@ export interface IImage extends ImageProps {
   width?: number | string;
   borderRadius?: number;
   borderWidth?: number;
-  color?: string;
+  color?: TColors;
   border?: boolean;
-  bgColor?: string;
+  bgColor?: TColors;
 }

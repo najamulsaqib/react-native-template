@@ -1,8 +1,9 @@
 import { TextProps } from 'react-native';
+import { TColors } from 'src/config/globalStyles';
 import { TypographyType } from 'src/config/styles';
 
 export interface ITextProps extends TextProps {
-  color?: string;
+  color?: TColors;
   typography?: TypographyType;
   fontSize?: number;
   bold?: boolean;

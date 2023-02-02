@@ -7,7 +7,7 @@ import { TypographyStyles } from 'src/config/styles';
 import { ITextProps } from './types';
 
 const Text = ({
-  color = globalStyles.Theme.PrimaryColor,
+  color = 'PrimaryColor',
   typography = 'normal',
   fontSize = 24,
   bold,
@@ -25,7 +25,8 @@ const Text = ({
     <RNText
       style={[
         {
-          color,
+          // @ts-ignore
+          color: globalStyles.Theme[color] ?? color,
           fontWeight: bold !== undefined ? 'bold' : undefined,
           fontSize: fontSize * fontRef,
           paddingVertical: paddingVertical * heightRef,

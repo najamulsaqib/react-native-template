@@ -9,8 +9,8 @@ import { LOGIN } from 'src/Redux/Reducers/Auth/actions';
 const Login = ({}: StackScreenProps<TAuthStack>) => {
   return (
     <View flexLayout={['flexBase', 'flexCenter']}>
-      <Image source={Assets.logo} size={100} />
-      <Text onPress={LOGIN} typography={'h1'}>
+      <Image source={Assets.logo} size={100} color={'PrimaryColor'} />
+      <Text onPress={LOGIN} typography={'h1'} color={'SecondaryColor'}>
         AUTH SCREEN
       </Text>
     </View>
