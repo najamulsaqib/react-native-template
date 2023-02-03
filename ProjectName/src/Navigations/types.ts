@@ -2,6 +2,7 @@ import { ParamListBase, RouteProp } from '@react-navigation/native';
 import {
   StackNavigationOptions,
   StackNavigationProp,
+  StackScreenProps,
 } from '@react-navigation/stack';
 
 export type TAuthStack = {
@@ -14,6 +15,9 @@ export type THomeStack = {
   //   propsToSend: string;
   // };
 };
+
+export type THomeScreen = React.FC<StackScreenProps<THomeStack>>;
+export type TAuthScreen = React.FC<StackScreenProps<TAuthStack>>;
 
 declare type ScreenComponentType<
   ParamList extends ParamListBase,

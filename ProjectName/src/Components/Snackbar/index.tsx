@@ -8,16 +8,18 @@ import { EventRegister } from 'react-native-event-listeners';
 const Snackbar = () => {
   let dropDownAlertRef = useRef();
 
-  // @ts-ignore
   useEffect(() => {
-    let listener = EventRegister.addEventListener(
+    let id = EventRegister.addEventListener(
       'showSnackbar',
       ({ type, header, body, action, interval }) => {
         // @ts-ignore
         dropDownAlertRef.alertWithType(type, header, body, action, interval);
       },
     );
-    return () => listener;
+    return () => {
+      // @ts-ignore
+      EventRegister.removeEventListener(id);
+    };
   }, []);
   return (
     <DropdownAlert
