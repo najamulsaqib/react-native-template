@@ -44,6 +44,7 @@
     "react-native-event-listeners": "^1.0.7",
     "react-native-gesture-handler": "^2.7.0",
     "react-native-mmkv": "^2.4.3",
+    "react-native-navigation-bar-color": "^2.0.2",
     "react-native-pager-view": "^6.0.1",
     "react-native-reanimated": "^2.3.0-beta.2",
     "react-native-safe-area-context": "^3.3.2",

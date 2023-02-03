@@ -6,8 +6,9 @@
  * @flow strict-local
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import { LogBox, StatusBar } from 'react-native';
+import changeNavigationBarColor from 'react-native-navigation-bar-color';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 import Snackbar from 'src/Components/Snackbar';
@@ -16,6 +17,7 @@ import { persistor, store } from 'src/Redux/ConfigureStore';
 LogBox.ignoreAllLogs();
 
 const App = () => {
+  useEffect(() => changeNavigationBarColor('translucent', false), []);
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
