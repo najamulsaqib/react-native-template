@@ -1,11 +1,3 @@
-/**
- * @copyright Falcon Consulting
- * @author Najam Ul Saqib
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React from 'react';
 import {LogBox, StatusBar} from 'react-native';
 import {Provider} from 'react-redux';
