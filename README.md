@@ -5,7 +5,7 @@
 ## Installation
 
 ```sh
-npx react-native init AwesomeTSProject --template=https://github.com/najam-falcon/react-native-template.git
+npx react-native init AwesomeTSProject --template=https://github.com/najamulsaqib/react-native-template.git
 ```
 
 ```sh
