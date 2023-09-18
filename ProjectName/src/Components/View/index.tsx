@@ -1,9 +1,9 @@
 import React from 'react';
-import { View as RNView } from 'react-native';
+import {View as RNView} from 'react-native';
 import Animated from 'react-native-reanimated';
-import { heightRef, widthRef } from 'src/config/screenSize';
-import { FlexStyles } from 'src/config/styles';
-import { Props } from './types';
+import {heightRef, widthRef} from 'src/config/screenSize';
+import {FlexStyles} from 'src/config/styles';
+import {Props} from './types';
 
 const View = ({
   children,

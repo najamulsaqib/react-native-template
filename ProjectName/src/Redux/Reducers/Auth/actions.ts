@@ -1,21 +1,22 @@
-import { showSnackbar } from 'src/Components/Snackbar';
-import { getRedux } from 'src/Redux/function';
+import {showSnackbar} from 'src/Components/Snackbar';
+import {getRedux} from 'src/Redux/function';
+// import Axios from 'src/config/Axios'; // To call API Client ***
 
 export const USER_LOGOUT = 'USER_LOGOUT';
 export const USER_LOGIN = 'USER_LOGIN';
 
 export const LOGIN = () => {
-  const { dispatch } = getRedux();
+  const {dispatch} = getRedux();
   dispatch({
     type: USER_LOGIN,
   });
-  showSnackbar({ type: 'success', body: 'Login Successful', header: 'Login' });
+  showSnackbar({type: 'success', body: 'Login Successful', header: 'Login'});
 };
 
 export const LOGOUT = () => {
-  const { dispatch } = getRedux();
+  const {dispatch} = getRedux();
   dispatch({
     type: USER_LOGOUT,
   });
-  showSnackbar({ type: 'error', body: 'Logout Successful', header: 'Logout' });
+  showSnackbar({type: 'error', body: 'Logout Successful', header: 'Logout'});
 };

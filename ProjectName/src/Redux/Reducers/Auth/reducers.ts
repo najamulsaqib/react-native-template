@@ -1,5 +1,5 @@
-import { USER_LOGIN, USER_LOGOUT } from './actions';
-import { TAuth } from './types';
+import {USER_LOGIN, USER_LOGOUT} from './actions';
+import {TAuth} from './types';
 
 const initialState: TAuth = {
   isLoggedIn: false,

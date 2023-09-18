@@ -1,7 +1,7 @@
 import React from 'react';
 import Home from 'src/Screens/Home';
-import { createStackNavigator } from '@react-navigation/stack';
-import { TScreen, THomeStack } from './types';
+import {createStackNavigator} from '@react-navigation/stack';
+import {TScreen, THomeStack} from './types';
 const Stack = createStackNavigator<THomeStack>();
 
 const screens: TScreen<THomeStack>[] = [
@@ -16,7 +16,7 @@ const screens: TScreen<THomeStack>[] = [
 const HomeStack = () => {
   return (
     <Stack.Navigator
-      screenOptions={{ headerShown: false }}
+      screenOptions={{headerShown: false}}
       initialRouteName="Home">
       {screens.map(s => (
         <Stack.Screen

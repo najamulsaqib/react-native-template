@@ -1,11 +1,12 @@
+/* eslint-disable react/no-unstable-nested-components */
 /* eslint-disable react-native/no-inline-styles */
 import * as React from 'react';
 import DropDownPicker from 'react-native-dropdown-picker';
-import Icon from 'react-native-dynamic-vector-icons';
+import Icon, {IconType} from 'react-native-dynamic-vector-icons';
 import globalStyles from 'src/config/globalStyles';
 import Text from '../Text';
 import View from '../View';
-import { defaultProps, DropDownProps } from './types';
+import {defaultProps, DropDownProps} from './types';
 
 const DropDown = (props: DropDownProps) => {
   return (
@@ -34,7 +35,7 @@ const DropDown = (props: DropDownProps) => {
           ]}
           ArrowDownIconComponent={() => (
             <Icon
-              type="MaterialIcons"
+              type={IconType.MaterialIcons}
               name="arrow-drop-down"
               size={30}
               color={globalStyles.Theme.SecondaryColor}
@@ -42,7 +43,7 @@ const DropDown = (props: DropDownProps) => {
           )}
           ArrowUpIconComponent={() => (
             <Icon
-              type="MaterialIcons"
+              type={IconType.MaterialIcons}
               name="arrow-drop-up"
               size={30}
               color={globalStyles.Theme.SecondaryColor}
@@ -100,7 +101,6 @@ const DropDown = (props: DropDownProps) => {
       </View>
     </View>
   );
-  // #endregion :: MAIN UI END's FROM HERE
 };
 
 DropDown.defaultProps = defaultProps;

@@ -1,25 +1,25 @@
 import axios from 'axios';
-import { ENV } from 'src/config/env';
-import { getRedux } from 'src/Redux/function';
+import {ENV} from 'src/config/env';
+import {getRedux} from 'src/Redux/function';
 
-interface IApi {
+interface IAxios {
   method: string;
   url: string;
   data?: Object;
 }
 
-class Api {
-  static request({ method, url, data = {} }: IApi) {
-    const { state } = getRedux();
+class Axios {
+  static request({method, url, data = {}}: IAxios) {
+    const {state} = getRedux();
     const token = state.auth.token;
     return axios({
       method,
       url: ENV.base_url + url,
-      ...(Object.keys(data).length !== 0 && { data: JSON.stringify(data) }),
+      ...(Object.keys(data).length !== 0 && {data: JSON.stringify(data)}),
       headers: {
         accept: 'application/json',
         'Content-Type': 'application/json',
-        ...(token && { Authorization: `Bearer ${token}` }),
+        ...(token && {Authorization: `Bearer ${token}`}),
       },
     })
       .then((res: any) => res.data)
@@ -27,8 +27,8 @@ class Api {
         throw err;
       });
   }
-  static formRequest({ method, url, data = {} }: IApi) {
-    const { state } = getRedux();
+  static formRequest({method, url, data = {}}: IAxios) {
+    const {state} = getRedux();
     const token = state.auth.token;
     return axios({
       method,
@@ -37,7 +37,7 @@ class Api {
       headers: {
         accept: 'application/json',
         'Content-Type': 'multipart/form-data',
-        ...(token && { Authorization: `Bearer ${token}` }),
+        ...(token && {Authorization: `Bearer ${token}`}),
       },
     })
       .then((res: any) => res.data)
@@ -47,4 +47,4 @@ class Api {
   }
 }
 
-export default Api;
+export default Axios;

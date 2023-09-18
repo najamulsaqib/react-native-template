@@ -1,8 +1,8 @@
 import React from 'react';
-import { Image as RNImage } from 'react-native';
+import {Image as RNImage} from 'react-native';
 import globalStyles from 'src/config/globalStyles';
-import { heightRef, widthRef } from 'src/config/screenSize';
-import { IImage } from './types';
+import {heightRef, widthRef} from 'src/config/screenSize';
+import {IImage} from './types';
 
 const Image = ({
   size,
@@ -32,8 +32,9 @@ const Image = ({
             border !== undefined ? (borderWidth ? borderWidth : 2) : undefined,
           borderColor:
             bgColor !== undefined
-              ? //@ts-ignore
-                globalStyles.Theme[bgColor] ?? bgColor
+              ? globalStyles.Theme[
+                  bgColor as keyof typeof globalStyles.Theme
+                ] ?? bgColor
               : undefined,
           borderRadius: borderRadius && borderRadius,
           height: imageHeight,
@@ -41,12 +42,15 @@ const Image = ({
           resizeMode,
         },
         color !== undefined
-          ? //@ts-ignore
-            { tintColor: globalStyles.Theme[color] ?? color }
+          ? {
+              tintColor:
+                globalStyles.Theme[color as keyof typeof globalStyles.Theme] ??
+                color,
+            }
           : {},
         style,
       ]}
-      {...{ ...rest }}
+      {...{...rest}}
     />
   );
 };
