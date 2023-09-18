@@ -1,14 +1,13 @@
-import { heightRef, widthRef } from './screenSize';
+import {heightRef, widthRef} from './screenSize';
 export const MEDIA_HEIGHT = 295 * heightRef;
 const globalStyles = {
   Theme: {
     backgroundColor: 'white',
-    // PrimaryColor: '#222780',
     PrimaryColor: '#212A6B',
     AccentPrimaryColor: '#EF4D97',
     SecondaryColor: '#3AC4F4',
     TextBackgroundColor: '#F4F8FF',
-    rippleColor: '#3AC4F4',
+    rippleColor: '#fcba03',
   },
 
   image: (height = '100%', width = '100%') => ({
@@ -41,6 +40,6 @@ const globalStyles = {
 };
 export default globalStyles;
 
-type HexColor = string & { _?: any };
+type HexColor = string & {_?: any};
 
 export type TColors = keyof typeof globalStyles.Theme | HexColor;

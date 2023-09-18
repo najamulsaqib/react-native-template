@@ -1,6 +1,6 @@
-import { LayoutAnimation, PermissionsAndroid, ViewStyle } from 'react-native';
-import { EventRegister } from 'react-native-event-listeners';
-import { ENV } from './env';
+import {LayoutAnimation, PermissionsAndroid, ViewStyle} from 'react-native';
+import {EventRegister} from 'react-native-event-listeners';
+import {ENV} from './env';
 import globalStyles from './globalStyles';
 
 export const LayoutAnimate = (time: number = 500) => {
@@ -10,7 +10,7 @@ export const LayoutAnimate = (time: number = 500) => {
       type: LayoutAnimation.Types.easeInEaseOut,
       property: LayoutAnimation.Properties.opacity,
     },
-    update: { type: LayoutAnimation.Types.easeInEaseOut },
+    update: {type: LayoutAnimation.Types.easeInEaseOut},
   });
 };
 
@@ -40,7 +40,7 @@ export const prettierJSON = (...arg: any) => {
 };
 
 export const EnableSnackBar = (
-  { data, config }: { data: string; config: ViewStyle },
+  {data, config}: {data: string; config: ViewStyle},
   success = true,
 ) => {
   let snackConfig = {

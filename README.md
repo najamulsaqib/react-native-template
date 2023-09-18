@@ -44,27 +44,38 @@ yarn react-native generate-bootsplash --help
 The command can take multiple arguments:
 
 ```bash
-yarn react-native generate-bootsplash <logoPath>
+Usage: react-native generate-bootsplash [options] <logo>
 
-Generate a launch screen using an original logo file
+Generate a launch screen using a logo file path (PNG or SVG)
 
 Options:
-  --background-color <color>  color used as launch screen background (in hexadecimal format) (default: "#fff")
-  --logo-width <width>        logo width at @1x (in dp - we recommend approximately ~100) (default: 100)
-  --assets-path [path]        path to your static assets directory (useful to require the logo file in JS)
-  --flavor <flavor>           [android only] flavor build variant (outputs in an android resource directory other than "main")
-  -h, --help                  output usage information
+  --platforms <list>          Platforms to generate for, separated by a comma (default: "android,ios,web")
+  --background <string>       Background color (in hexadecimal format) (default: "#fff")
+  --logo-width <number>       Logo width at @1x (in dp - we recommend approximately ~100) (default: 100)
+  --assets-output <string>    Assets output directory path
+  --flavor <string>           Android flavor build variant (where your resource directory is) (default: "main")
+  --html <string>             HTML template file path (your web app entry point) (default: "index.html")
+  --license-key <string>      License key to enable brand and dark mode assets generation
+  --brand <string>            Brand file path (PNG or SVG)
+  --brand-width <number>      Brand width at @1x (in dp - we recommend approximately ~80) (default: 80)
+  --dark-background <string>  [dark mode] Background color (in hexadecimal format)
+  --dark-logo <string>        [dark mode] Logo file path (PNG or SVG)
+  --dark-brand <string>       [dark mode] Brand file path (PNG or SVG)
+  -h, --help                  display help for command
 ```
 
 #### Full command usage example
 
 ```bash
-yarn react-native generate-bootsplash assets/bootsplash_logo_original.png \
-  --background-color=F5FCFF \
+yarn react-native generate-bootsplash path/to/image.png \
+  --background=F5FCFF \
   --logo-width=100 \
-  --assets-path=assets \
+  --assets-output=src/Assets/bootsplash \
   --flavor=main
 ```
+
+**⚠️ After running above command:**
+> Copy all drawable-<*> assets to relative mipmap-<*> folders ```example drawable-hdpi/bootsplash_logo.png to mipmap-hdpi```
 
 ## Error
 

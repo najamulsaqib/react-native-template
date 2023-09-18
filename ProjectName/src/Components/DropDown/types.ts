@@ -1,4 +1,4 @@
-import { StyleProp, TextStyle, ViewStyle } from 'react-native';
+import {StyleProp, TextStyle, ViewStyle} from 'react-native';
 import DropDownPicker from 'react-native-dropdown-picker';
 
 export type DropDownProps = React.ComponentProps<typeof DropDownPicker> & {

@@ -1,23 +1,22 @@
 /**
- ** FalconIT template for React Native App
- * https://github.com/falconitconsultant
+ * @copyright Falcon Consulting
+ * @author Najam Ul Saqib
+ * https://github.com/facebook/react-native
  *
  * @format
- * @flow strict-local
  */
 
-import React, { useEffect } from 'react';
-import { LogBox, StatusBar } from 'react-native';
-import changeNavigationBarColor from 'react-native-navigation-bar-color';
-import { Provider } from 'react-redux';
-import { PersistGate } from 'redux-persist/integration/react';
+import React from 'react';
+import {LogBox, StatusBar} from 'react-native';
+import {Provider} from 'react-redux';
+import {PersistGate} from 'redux-persist/integration/react';
 import Snackbar from 'src/Components/Snackbar';
-import Navigations from 'src/Navigations';
-import { persistor, store } from 'src/Redux/ConfigureStore';
+import Navigation from 'src/Navigation';
+import {persistor, store} from 'src/Redux/ConfigureStore';
+
 LogBox.ignoreAllLogs();
 
-const App = () => {
-  useEffect(() => changeNavigationBarColor('translucent', false), []);
+function App(): JSX.Element {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
@@ -26,11 +25,11 @@ const App = () => {
           barStyle="dark-content"
           translucent
         />
-        <Navigations />
+        <Navigation />
         <Snackbar />
       </PersistGate>
     </Provider>
   );
-};
+}
 
 export default App;
