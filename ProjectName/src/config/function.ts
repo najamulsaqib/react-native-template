@@ -70,3 +70,6 @@ export const GetArray = (arr: [] | string) =>
 export const assetsURL = (url: string) => ({
   uri: ENV.resourceURL + '/' + url,
 });
+
+export const getError: (res: any) => string = res =>
+  res.response?.data?.message || res.message || 'Something went wrong.';
