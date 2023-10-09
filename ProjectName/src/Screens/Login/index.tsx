@@ -6,7 +6,7 @@ import Text from 'src/Components/Text';
 import View from 'src/Components/View';
 import {TAuthScreen} from 'src/Navigation/types';
 import {LOGIN} from 'src/Redux/Reducers/Auth/actions';
-const Login: TAuthScreen = () => {
+const Login: TAuthScreen<'Login'> = () => {
   const spinValue = React.useRef(new Animated.Value(0)).current;
 
   React.useEffect(() => {

@@ -16,8 +16,13 @@ export type THomeStack = {
   // };
 };
 
-export type THomeScreen = React.FC<StackScreenProps<THomeStack>>;
-export type TAuthScreen = React.FC<StackScreenProps<TAuthStack>>;
+
+export type THomeScreen<T extends keyof THomeStack> = React.FC<
+  StackScreenProps<THomeStack, T>
+>;
+export type TAuthScreen<T extends keyof TAuthStack> = React.FC<
+  StackScreenProps<TAuthStack, T>
+>;
 
 declare type ScreenComponentType<
   ParamList extends ParamListBase,
@@ -33,7 +38,7 @@ export type TScreen<Stack extends ParamListBase> = {
   //* commonly used.
   key: React.Key;
   name: keyof Stack;
-  component: ScreenComponentType<Stack, keyof Stack>;
+  component: ScreenComponentType<Stack, keyof Stack> | React.FC<any>;
   options?: StackNavigationOptions;
 
   //? not commonly used.

@@ -7,7 +7,7 @@ import View from 'src/Components/View';
 import {THomeScreen} from 'src/Navigation/types';
 import {LOGOUT} from 'src/Redux/Reducers/Auth/actions';
 import globalStyles from 'src/config/globalStyles';
-const Home: THomeScreen = () => {
+const Home: THomeScreen<'Home'> = () => {
   const fadeValue = React.useRef(new Animated.Value(0)).current;
   const slideValue = React.useRef(new Animated.Value(0)).current;
 
