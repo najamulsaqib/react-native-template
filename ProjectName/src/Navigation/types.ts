@@ -16,7 +16,6 @@ export type THomeStack = {
   // };
 };
 
-
 export type THomeScreen<T extends keyof THomeStack> = React.FC<
   StackScreenProps<THomeStack, T>
 >;
