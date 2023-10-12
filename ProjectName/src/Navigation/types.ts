@@ -16,8 +16,12 @@ export type THomeStack = {
   // };
 };
 
-export type THomeScreen = React.FC<StackScreenProps<THomeStack>>;
-export type TAuthScreen = React.FC<StackScreenProps<TAuthStack>>;
+export type THomeScreen<T extends keyof THomeStack> = React.FC<
+  StackScreenProps<THomeStack, T>
+>;
+export type TAuthScreen<T extends keyof TAuthStack> = React.FC<
+  StackScreenProps<TAuthStack, T>
+>;
 
 declare type ScreenComponentType<
   ParamList extends ParamListBase,
