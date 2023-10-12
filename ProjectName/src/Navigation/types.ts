@@ -37,7 +37,7 @@ export type TScreen<Stack extends ParamListBase> = {
   //* commonly used.
   key: React.Key;
   name: keyof Stack;
-  component: ScreenComponentType<Stack, keyof Stack>;
+  component: ScreenComponentType<Stack, keyof Stack> | React.FC<any>;
   options?: StackNavigationOptions;
 
   //? not commonly used.
