@@ -1,1 +1,1 @@
-export * from './claim';
+export * from './auth';
